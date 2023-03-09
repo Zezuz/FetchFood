@@ -14,13 +14,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     
         var desserts = [Desserts]()
-    var strMeals: [String]  = []
+        var meals: [Meal] = []
+
+        var strMeals: [String]  = []
         
 
         override func viewDidLoad() {
             super.viewDidLoad()
             
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+            tableView.delegate = self
+            tableView.dataSource = self
             
             fetchDessertMeals { [weak self] meals in
                         if let meals = meals {
@@ -32,18 +36,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     }
             
         }
-    
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(strMeals.count)
-           return strMeals.count
-       }
-       
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-           cell.textLabel?.text = strMeals[indexPath.row]
-           return cell
-       }
-   }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return meals.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MealCell", for: indexPath)
+        let meal = meals[indexPath.row]
+        cell.textLabel?.text = meal.strMeal
+        return cell
+    }
+
+
+
     
     struct MealsResponse: Codable {
         let meals: [Meal]
@@ -70,6 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             do {
                 let response = try JSONDecoder().decode(MealsResponse.self, from: data)
+                self.meals = response.meals
                 let meals = response.meals.map { $0.strMeal }
                 completion(meals)
                 print(meals)
@@ -87,3 +93,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
 
+}
+//     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print(strMeals.count)
+//           return strMeals.count
+//       }
+//
+//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//           let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+//           cell.textLabel?.text = strMeals[indexPath.row]
+//           return cell
+//       }
+//   }

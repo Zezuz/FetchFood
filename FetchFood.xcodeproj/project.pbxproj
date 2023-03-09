@@ -13,6 +13,8 @@
 		2DB653B129B966AF00D36842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB653AF29B966AF00D36842 /* Main.storyboard */; };
 		2DB653B329B966BF00D36842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DB653B229B966BF00D36842 /* Assets.xcassets */; };
 		2DB653B629B966BF00D36842 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB653B429B966BF00D36842 /* LaunchScreen.storyboard */; };
+		2DB653BF29B969F400D36842 /* Desserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB653BE29B969F400D36842 /* Desserts.swift */; };
+		2DB653C329B96AAD00D36842 /* DessertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB653C229B96AAD00D36842 /* DessertsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2DB653B229B966BF00D36842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DB653B529B966BF00D36842 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DB653B729B966BF00D36842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DB653BE29B969F400D36842 /* Desserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desserts.swift; sourceTree = "<group>"; };
+		2DB653C229B96AAD00D36842 /* DessertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 				2DB653AD29B966AF00D36842 /* ViewController.swift */,
 				2DB653AF29B966AF00D36842 /* Main.storyboard */,
 				2DB653B229B966BF00D36842 /* Assets.xcassets */,
+				2DB653C229B96AAD00D36842 /* DessertsViewController.swift */,
 				2DB653B429B966BF00D36842 /* LaunchScreen.storyboard */,
 				2DB653B729B966BF00D36842 /* Info.plist */,
+				2DB653BE29B969F400D36842 /* Desserts.swift */,
 			);
 			path = FetchFood;
 			sourceTree = "<group>";
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DB653BF29B969F400D36842 /* Desserts.swift in Sources */,
 				2DB653AE29B966AF00D36842 /* ViewController.swift in Sources */,
 				2DB653AA29B966AF00D36842 /* AppDelegate.swift in Sources */,
+				2DB653C329B96AAD00D36842 /* DessertsViewController.swift in Sources */,
 				2DB653AC29B966AF00D36842 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
